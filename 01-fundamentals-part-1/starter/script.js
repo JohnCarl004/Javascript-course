@@ -118,42 +118,46 @@
 
 
 
-// ////////////////////////////////////
-// // Coding Challenge #1 - BMI Calculator
+////////////////////////////////////
+// Coding Challenge #1 - BMI Calculator
 
-// // Test Data 1
-// const massMark = 78;
-// const heightMark = 1.69;
-// const massJohn = 92;
-// const heightJohn = 1.95;
+// Test Data 1
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
 
-// // Your code here:
-// // 1. Calculate BMIs
-// // 2. Create markHigherBMI variable
-// // 3. Log results to console
-// // `BMI = mass / height ** 2`
+// Your code here:
+// 1. Calculate BMIs
+// 2. Create markHigherBMI variable
+// 3. Log results to console
+// `BMI = mass / height ** 2`
 
-// const BMImark = massMark / heightMark ** 2;
-// const BMIjohn = massJohn / heightJohn ** 2;
+const BMImark = massMark / heightMark ** 2;
+const BMIjohn = massJohn / heightJohn ** 2;
 
-// const markHigherBMI = BMImark > BMIjohn;
-// console.log("Mark's BMI:", BMImark);
-// console.log("John's BMI:", BMIjohn);
+const markHigherBMI = BMImark > BMIjohn;
+console.log("Mark's BMI:", BMImark);
+console.log("John's BMI:", BMIjohn);
 
-// console.log("Is Mark's BMI higher than John's?", markHigherBMI);
+console.log("Is Mark's BMI higher than John's?", markHigherBMI);
 
 
-const firstName = "Jonas";
-const job = "teacher";
-const birthYear = 1991;
-const year = 2037;
+// const firstName = "Jonas";
+// const job = "teacher";
+// const birthYear = 1991;
+// const year = 2037;
 
-const jonas =
-"I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
-console.log(jonas);
+// const jonas =
+// "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+// console.log(jonas); 'I\'m Jonas, a 46 years old teacher!'
 
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
-console.log(jonasNew);
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}! `;
+// console.log(jonasNew); `I\'m Jonas, a 46 years old teacher!  '
 
-console.log('I'm
+// console.log(`I'm ${2037 - 1991} years old`); 'I\'m 46 years old' 
+// console.log(`Math works here: ${2 + 3} equals 5`); Math works here: 5 equals 5
 
+
+// if else statement 
+const age = 15;
