@@ -162,8 +162,41 @@ const age = 15;
 
 if (age >= 18) {
     console.log("Sarah can start driving license 🚗");
-} else {
+} else { 
     const yearsLeft = 18 - age; 
     console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
 }
+
+
+console.log (Booleen(0)); 
+console.log (Booleen(undefined));
+console.log (Booleen("Jonas"));
+console.log (Booleen({}));
+console.log (Booleen(""));
+
+
+////////////////////////////////////
+// Coding Challenge #2
+
+// Reuse your BMI calculation from Challenge #1
+const massMark = 55;
+const heightMark = 1.69;
+const massJohn = 95;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+// Your if/else statement here:
+// Compare BMIs and create intelligent messages
+// Use template literals for beautiful output
+
+if (BMIMark > BMIJohn) {
+    console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
+}
+else {
+    console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
+} 
+
 
