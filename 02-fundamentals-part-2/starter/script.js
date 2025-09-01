@@ -201,61 +201,293 @@
 
 
 
+// ////////////////////////////////////
+// // Coding Challenge #2 - Student Grade Manager
+
+// const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+
+// // Function to calculate average
+// function calculateAverage(grades) {
+//   let sum = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     sum += grades[i];
+//   }
+//   return sum / grades.length;
+// }
+
+// // Function to find highest grade
+// function findHighestGrade(grades) {
+//   let highest = grades[0];
+//   for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] > highest) {
+//       highest = grades[i];
+//     }
+//   }
+//   return highest;
+// }
+
+// // Function to find lowest grade
+// function findLowestGrade(grades) {
+//   let lowest = grades[0];
+//   for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] < lowest) {
+//       lowest = grades[i];
+//     }
+//   }
+//   return lowest;
+// }
+
+// // Function to count passing students
+// function countPassing(grades, passingGrade) {
+//   let count = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= passingGrade) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// // Generate complete report
+// const average = calculateAverage(grades);
+// const highest = findHighestGrade(grades);
+// const lowest = findLowestGrade(grades);
+// const passing = countPassing(grades, 70);
+
+// console.log("=== GRADE REPORT ===");
+// console.log(`Average: ${average.toFixed(2)}`);
+// console.log(`Highest: ${highest}`);
+// console.log(`Lowest: ${lowest}`);
+// console.log(`Passing students: ${passing} out of ${grades.length}`);
+
+
+
+
+/////////////////////////////////
+// Hour 3
+
+// Problems with arrays
+const JohnArray = [
+  "John",
+  "Gajero",
+  2025-2004,
+  "Student",
+  ["Michael", "Peter", "Steven"]
+];
+
+console.log(JohnArray[0]);
+console.log(JohnArray[1]);
+
+const JohnObject = {
+  firstName: "John",
+  lastName: "Gajero",
+  age: 2025 - 2004,
+  job: "Student",
+  friends: ["Michael", "Peter", "Steven"]
+};
+
+console.log(JohnObject);
+
+// property access methods
+// dot notation
+
+console.log(JohnObject.firstName);
+console.log(JohnObject.lastName);
+console.log(JohnObject.age);
+
+// bracket notation
+console.log(JohnObject["firstName"]);
+console.log(JohnObject["lastName"]);
+console.log(JohnObject["age"]);
+
+const nameKey = "Name";
+console.log(JohnObject["first" + nameKey]);
+
+
+
+/// Modifying Object Properties
+JohnObject.job = "student";
+JohnObject["age"] = 21;
+console.log(JohnObject);
+
+
+// Add new properties
+JohnObject.location = "Philippines";
+JohnObject["twitter"] = "@johncarlgajero";
+JohnObject.hasdriversLicense = true;
+console.log(JohnObject);
+
+
+//when to use dot vs bracket notation
+const property = "job";
+console.log(JohnObject[property]);
+
+
+/// Objects vs Arrays Decision Making
+
+// Arrays
+const listOfYears = [1991, 2004, 2008, 2020];
+const shoppingList = ["apples", "bananas", "milk", "bread"];
+const testScores = [85, 92, 78, 96];
+
+
+// Objects
+const person = {
+  name: "John",
+  age: 20,
+  occupation: "Student",
+};
+const car = {
+  brand : "Toyota",
+  model : "Corolla",
+  year : 2020,
+  color : "Blue",
+}
+
+
+// Objects can contains arrays, arrays can contain objects
+const student = {
+  name: "Sarah",
+  grades: [85, 92, 78],
+  address: 
+    {
+      street: "123 Main St",
+      city: "New York", 
+    },
+}
+
+console.log(student.grades[0]);
+console.log(student.address.city);
+
+// Object Methods
+
+const John = {
+  firstName: "John",
+  lastName: "Doe",
+  birthYear: 1995,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+hasDriversLicense: true,
+
+calcAge: function (birthYear) {
+  return 2025 - birthYear;
+},
+};
+
+console.log(John.calcAge(1995));
+
+// 'this' keyword
+const JohnImproved = {
+  firstName: "John",
+  lastName: "Doe",
+  birthYear: 1995,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+hasDriversLicense: false,
+
+calcAge: function () {
+ this.age = 2025 - this.birthYear;
+ return this.age;
+},
+
+getSummary: function () {
+  return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`;
+},
+};
+
+console.log(JohnImproved.calcAge());
+console.log(JohnImproved.age);
+console.log(JohnImproved.getSummary());
+
+
+
+
+
+// Complex object with multiple methods
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////
-// Coding Challenge #2 - Student Grade Manager
+// Coding Challenge #3 - User Profile System
 
-const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+const user = {
+  firstName: "Sarah",
+  lastName: "Johnson",
+  birthYear: 1995,
+  location: "New York",
+  interests: ["photography", "travel", "coding"],
+  friends: [
+    { name: "Michael", status: "active" },
+    { name: "Emma", status: "inactive" },
+    { name: "David", status: "active" },
+  ],
+  isActive: true,
 
-// Function to calculate average
-function calculateAverage(grades) {
-  let sum = 0;
-  for (let i = 0; i < grades.length; i++) {
-    sum += grades[i];
-  }
-  return sum / grades.length;
-}
+  // Calculate age method
+  calcAge: function () {
+    // Calculate age and store as this.age
+    // Hint: Use new Date().getFullYear() for current year
+    // Your code here
+    this.age = new Date().getFullYear() - this.birthYear;
+    return this.age;
+  },
 
-// Function to find highest grade
-function findHighestGrade(grades) {
-  let highest = grades[0];
-  for (let i = 1; i < grades.length; i++) {
-    if (grades[i] > highest) {
-      highest = grades[i];
-    }
-  }
-  return highest;
-}
+  // Add friend method
+  addFriend: function (name, status = "active") {
+    // Add new friend object to this.friends array
+    // Return the new length of friends array
+    // Your code here
+    this.friends.push({ name, status: status });
+    return this.friends.length;
+  },
 
-// Function to find lowest grade
-function findLowestGrade(grades) {
-  let lowest = grades[0];
-  for (let i = 1; i < grades.length; i++) {
-    if (grades[i] < lowest) {
-      lowest = grades[i];
-    }
-  }
-  return lowest;
-}
+  // Get active friends count
+  getActiveFriends: function () {
+    // Filter friends array to count only active friends
+    // Hint: use this.friends.filter()
+    // Your code here
+    const activeFriends = this.friends.filter(friend => friend.status === "active");
+    return activeFriends.length;
+  },
 
-// Function to count passing students
-function countPassing(grades, passingGrade) {
-  let count = 0;
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i] >= passingGrade) {
-      count++;
-    }
-  }
-  return count;
-}
+  // Toggle active status
+  toggleStatus: function () {
+    // Switch this.isActive between true and false
+    // Return the new status
+    // Your code here
+    this.isActive = !this.isActive;
+    return this.isActive;
+  },
 
-// Generate complete report
-const average = calculateAverage(grades);
-const highest = findHighestGrade(grades);
-const lowest = findLowestGrade(grades);
-const passing = countPassing(grades, 70);
+  // Generate profile summary
+  getSummary: function () {
+    // Create a social media style profile summary
+    // Include: name, age, location, status, friend counts, interests
+    // Use template literals for nice formatting
+    // Your code here
+    const age = this.calcAge();
+    const activeFriendsCount = this.getActiveFriends();
+    const status = this.isActive ? "Active" : "Away";
+    return `$(this.firstName) $(this.LastName) (${age}) from $(this.location)
+    currently: $(status)
+    $(activeFriends) active friends out of ${this.friends.length} total
+    Interests: ${this.interests.join(",  ")}
+    Connected and sharing life's adventures`;
+  },
+};
 
-console.log("=== GRADE REPORT ===");
-console.log(`Average: ${average.toFixed(2)}`);
-console.log(`Highest: ${highest}`);
-console.log(`Lowest: ${lowest}`);
-console.log(`Passing students: ${passing} out of ${grades.length}`);
+// Test your user profile system
+console.log(user.getSummary());
+user.addFriend("Alex", "active");
+user.toggleStatus();
+console.log(`\nAfter updates:`);
+console.log(user.getSummary());
