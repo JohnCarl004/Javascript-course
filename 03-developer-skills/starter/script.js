@@ -1,174 +1,174 @@
-//
+// //
 
-/// professional dev environment setup
+// /// professional dev environment setup
 
-console.log("=== DEVELOPMENT ENVIRONMENT SETUP ===");
+// console.log("=== DEVELOPMENT ENVIRONMENT SETUP ===");
 
-////
+// ////
 
-const messyExample = function (name, age) {
-  if (age >= 18) {
-    return "Hello " + name + ", you are an adult";
-  } else {
-    return "Hello " + name + ", you are a minor";
-  }
-};
+// const messyExample = function (name, age) {
+//   if (age >= 18) {
+//     return "Hello " + name + ", you are an adult";
+//   } else {
+//     return "Hello " + name + ", you are a minor";
+//   }
+// };
 
-console.log("Current messy code example:", messyExample("John", 25));
-console.log("Goal: Automatic formatting, auto-refresh, and typing shortcuts");
-
-
-////////////////////////////////////
-// Extension Installation Test
-
-function testExtensions() {
-  const extensionTests = [
-    { name: "Prettier", status: "installed", purpose: "code formatting" },
-    { name: "Live Server", status: "installed", purpose: "auto refresh" },
-    {
-      name: "Auto Rename Tag",
-      status: "installed",
-      purpose: "HTML efficiency",
-    },
-  ];
-
-  return extensionTests;
-}
-
-const extensionStatus = testExtensions();
-console.log("Extension installation status:", extensionStatus);
+// console.log("Current messy code example:", messyExample("John", 25));
+// console.log("Goal: Automatic formatting, auto-refresh, and typing shortcuts");
 
 
-/////
-///
+// ////////////////////////////////////
+// // Extension Installation Test
 
-const prettierTest = {
-  firstName: "Sarah",
-  lastName: "Johnson",
-  skills: ["JavaScript", "React", "Node.js"],
-  isActive: true,
-};
+// function testExtensions() {
+//   const extensionTests = [
+//     { name: "Prettier", status: "installed", purpose: "code formatting" },
+//     { name: "Live Server", status: "installed", purpose: "auto refresh" },
+//     {
+//       name: "Auto Rename Tag",
+//       status: "installed",
+//       purpose: "HTML efficiency",
+//     },
+//   ];
 
-const messyFunction = function (x, y, z) {
-  if (x > 0 && y > 0) {
-    return x + y + z;
-  } else {
-    return 0;
-  }
-};
+//   return extensionTests;
+// }
 
-const messyArrow = (items) => {
-  return items.map((item) => {
-    return item.toUpperCase();
-  });
-};
-
-console.log(
-  "Before Prettier formatting - this code works but looks unprofessional"
-);
+// const extensionStatus = testExtensions();
+// console.log("Extension installation status:", extensionStatus);
 
 
-////
-// Create this with terrible formatting:
-const studentTest = {
-  firstName: "john",
-  skills: ["HTML", "CSS", "JavaScript"],
-  experience: "beginner",
-  goals: ["become-developer", "build-projects"],
-};
+// /////
+// ///
 
-const testFunc = function (data) {
-  for (let i = 0; i < data.length; i++) {
-    console.log(data[i]);
-  }
-};
+// const prettierTest = {
+//   firstName: "Sarah",
+//   lastName: "Johnson",
+//   skills: ["JavaScript", "React", "Node.js"],
+//   isActive: true,
+// };
 
-// Save the file and watch the magic happen!
+// const messyFunction = function (x, y, z) {
+//   if (x > 0 && y > 0) {
+//     return x + y + z;
+//   } else {
+//     return 0;
+//   }
+// };
 
+// const messyArrow = (items) => {
+//   return items.map((item) => {
+//     return item.toUpperCase();
+//   });
+// };
 
-/// 
-////////////////////////////////////
-// Live Server Testing
-
-// Test 1: Basic live reload
-let liveServerTest = "Initial message - change #1";
-console.log("Live Server test:", liveServerTest);
-
-// Test 2: Time-based updates
-const timeStamp = new Date().toLocaleTimeString();
-const updateCount = 1;
-
-console.log(`Live Server update #${updateCount} at ${timeStamp}`);
-
-// Test 3: Function testing
-function demonstrateLiveReload() {
-  const randomColor = ["red", "blue", "green", "purple", "orange"][
-    Math.floor(Math.random() * 5)
-  ];
-  const message = `Live Server rocks! Random color: ${randomColor}`;
-
-  console.log(message);
-  return message;
-}
-
-demonstrateLiveReload();
+// console.log(
+//   "Before Prettier formatting - this code works but looks unprofessional"
+// );
 
 
-// Student Exercise: Add this function and test live reload
-function showCurrentTime() {
-  const now = new Date().toLocaleTimeString();
-  console.log("Current time:", now);
-  return now;
-}
+// ////
+// // Create this with terrible formatting:
+// const studentTest = {
+//   firstName: "john",
+//   skills: ["HTML", "CSS", "JavaScript"],
+//   experience: "beginner",
+//   goals: ["become-developer", "build-projects"],
+// };
 
-showCurrentTime();
+// const testFunc = function (data) {
+//   for (let i = 0; i < data.length; i++) {
+//     console.log(data[i]);
+//   }
+// };
 
-////////////////////////////////////
-// Code Snippets Testing
+// // Save the file and watch the magic happen!
 
-// Type 'cl' then press Tab - it should expand to console.log();
-console.log("Testing snippet functionality - cl + Tab created this!");
 
-// Type 'func' then press Tab - it should create a function template
-function testSnippets() {
-  console.log("Function created with snippet - func + Tab!");
-  return "Snippets working perfectly!";
-}
+// /// 
+// ////////////////////////////////////
+// // Live Server Testing
 
-testSnippets();
+// // Test 1: Basic live reload
+// let liveServerTest = "Initial message - change #1";
+// console.log("Live Server test:", liveServerTest);
 
-// Type 'arrow' then press Tab - it should create an arrow function template
-const snippetTest = (message) => {
-  console.log(`Arrow function from snippet: ${message}`);
-  return message;
-};
+// // Test 2: Time-based updates
+// const timeStamp = new Date().toLocaleTimeString();
+// const updateCount = 1;
 
-snippetTest("Snippets save so much typing time!");
+// console.log(`Live Server update #${updateCount} at ${timeStamp}`);
 
-////////////////////////////////////
-// Environment Setup Verification
+// // Test 3: Function testing
+// function demonstrateLiveReload() {
+//   const randomColor = ["red", "blue", "green", "purple", "orange"][
+//     Math.floor(Math.random() * 5)
+//   ];
+//   const message = `Live Server rocks! Random color: ${randomColor}`;
 
-console.log("🎉 Professional Development Environment Complete!");
-console.log("✅ Prettier: Automatic code formatting");
-console.log("✅ Live Server: Automatic browser refresh");
-console.log("✅ Snippets: Fast code generation");
-console.log("✅ Extensions: Enhanced productivity");
-console.log("Ready for professional JavaScript development!");
+//   console.log(message);
+//   return message;
+// }
 
-// Calculate time savings
-function calculateTimeSavings() {
-  const dailyConsoleLogs = 50;
-  const keystrokesSavedPerLog = 11; // 'console.log()' vs 'cl' + Tab
-  const dailySavings = dailyConsoleLogs * keystrokesSavedPerLog;
-  const monthlySavings = dailySavings * 22; // work days
+// demonstrateLiveReload();
 
-  console.log(`Daily keystrokes saved: ${dailySavings}`);
-  console.log(`Monthly keystrokes saved: ${monthlySavings}`);
 
-  return { daily: dailySavings, monthly: monthlySavings };
-}
+// // Student Exercise: Add this function and test live reload
+// function showCurrentTime() {
+//   const now = new Date().toLocaleTimeString();
+//   console.log("Current time:", now);
+//   return now;
+// }
 
-calculateTimeSavings(); 
+// showCurrentTime();
+
+// ////////////////////////////////////
+// // Code Snippets Testing
+
+// // Type 'cl' then press Tab - it should expand to console.log();
+// console.log("Testing snippet functionality - cl + Tab created this!");
+
+// // Type 'func' then press Tab - it should create a function template
+// function testSnippets() {
+//   console.log("Function created with snippet - func + Tab!");
+//   return "Snippets working perfectly!";
+// }
+
+// testSnippets();
+
+// // Type 'arrow' then press Tab - it should create an arrow function template
+// const snippetTest = (message) => {
+//   console.log(`Arrow function from snippet: ${message}`);
+//   return message;
+// };
+
+// snippetTest("Snippets save so much typing time!");
+
+// ////////////////////////////////////
+// // Environment Setup Verification
+
+// console.log("🎉 Professional Development Environment Complete!");
+// console.log("✅ Prettier: Automatic code formatting");
+// console.log("✅ Live Server: Automatic browser refresh");
+// console.log("✅ Snippets: Fast code generation");
+// console.log("✅ Extensions: Enhanced productivity");
+// console.log("Ready for professional JavaScript development!");
+
+// // Calculate time savings
+// function calculateTimeSavings() {
+//   const dailyConsoleLogs = 50;
+//   const keystrokesSavedPerLog = 11; // 'console.log()' vs 'cl' + Tab
+//   const dailySavings = dailyConsoleLogs * keystrokesSavedPerLog;
+//   const monthlySavings = dailySavings * 22; // work days
+
+//   console.log(`Daily keystrokes saved: ${dailySavings}`);
+//   console.log(`Monthly keystrokes saved: ${monthlySavings}`);
+
+//   return { daily: dailySavings, monthly: monthlySavings };
+// }
+
+// calculateTimeSavings(); 
 
 
 /////////
