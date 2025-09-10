@@ -25,7 +25,7 @@ let secretNumber = Math.trunc(Math.random () *20 ) + 1;
 console.log('Secret Number:', secretNumber);
 
 // track the current score
-let score = 40;
+let score = 20;
 let highscore = 0;
 
 document.querySelector('.score').textContent = score;
@@ -44,13 +44,43 @@ if (guess === secretNumber) {
     console.log('Your guess is correct!');
     document.querySelector('.message').textContent = 'Correct Number';
     document.querySelector('.number').textContent = secretNumber;
+    if (score > highScore) {
+        highscore = score;
+        document.querySelector('.highscore').textContent = highscore;
+    }
+    document.querySelector('.message').textContent = 'You have won';
+    document.querySelector('guess').disabled = true;
+    document.querySelector('guess').disabled = true;
 }  else if (guess > secretNumber) {
         console.log('Too high!');
         document.querySelector('.message').textContent = 'Too high!';
+        score--;
+        document.querySelector('.score').textContent = score;
 }  else if (guess < secretNumber) {
         console.log('Too low!');
         document.querySelector('.message').textContent = 'Too low!';
-        
+        score--;
+        document.querySelector('.score').textContent = score;
+        if (score < 1) {
+            document.querySelector('.message').textContent = 'You Lost the Game, press again!';
+            document.querySelector('.guess').disabled = true;
+            document.querySelector('.guess').disabled = true;
+        }
     
     }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+    score = 20;
+    secretNumber = Math.trunc(Math.random() *20) + 1;
+    //restart
+    document.querySelector('.message').textContent = 'Start guessing'
+    //
+    DocumentFragment.querySelector('.number').textContent = '?';
+    //
+    document.querySelector('.score').textContent = score;
+    //
+    documentquerySelector('.guess').value = '';
+    documentquerySelector('.guess').disabled = false;
+    documentquerySelector('.check').disabled = false;
 });
