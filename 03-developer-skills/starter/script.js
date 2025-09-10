@@ -487,198 +487,198 @@
 // MAIN CHALLENGE: Weather Forecast String Builder
 
 
-onst data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
+// onst data1 = [17, 21, 23];
+// const data2 = [12, 5, -5, 0, 4];
 
-function printForecast(arr) {
-  // Start with empty string accumulator - same pattern as sum calculations
-  let str = "";
+// function printForecast(arr) {
+//   // Start with empty string accumulator - same pattern as sum calculations
+//   let str = "";
 
-  // Loop through array to build the formatted string
-  for (let i = 0; i < arr.length; i++) {
-    // Build each piece using template literals for clean formatting
-    str += `${arr[i]}°C in ${i + 1} days ... `;
-  }
+//   // Loop through array to build the formatted string
+//   for (let i = 0; i < arr.length; i++) {
+//     // Build each piece using template literals for clean formatting
+//     str += `${arr[i]}°C in ${i + 1} days ... `;
+//   }
 
-  // Add starting dots and log the final result
-  console.log("..." + str);
-}
+//   // Add starting dots and log the final result
+//   console.log("..." + str);
+// }
 
-// Test with provided data
-printForecast(data1);
-printForecast(data2);
+// // Test with provided data
+// printForecast(data1);
+// printForecast(data2);
 
-console.log("Weather forecast formatter working correctly!");
+// console.log("Weather forecast formatter working correctly!");
 
-////////////////////////////////////
-// ALTERNATIVE IMPLEMENTATIONS
+// ////////////////////////////////////
+// // ALTERNATIVE IMPLEMENTATIONS
 
-// Alternative 1 - Using array methods instead of loops
-function printForecastMap(arr) {
-  const formatted = arr.map((temp, index) => `${temp}°C in ${index + 1} days`);
-  console.log("..." + formatted.join(" ... ") + " ...");
-}
+// // Alternative 1 - Using array methods instead of loops
+// function printForecastMap(arr) {
+//   const formatted = arr.map((temp, index) => `${temp}°C in ${index + 1} days`);
+//   console.log("..." + formatted.join(" ... ") + " ...");
+// }
 
-// Alternative 2 - Single line approach using reduce
-function printForecastReduce(arr) {
-  const result = arr.reduce(
-    (acc, temp, index) => acc + `${temp}°C in ${index + 1} days ... `,
-    "..."
-  );
-  console.log(result);
-}
+// // Alternative 2 - Single line approach using reduce
+// function printForecastReduce(arr) {
+//   const result = arr.reduce(
+//     (acc, temp, index) => acc + `${temp}°C in ${index + 1} days ... `,
+//     "..."
+//   );
+//   console.log(result);
+// }
 
-// Test alternative approaches
-console.log("Testing alternative implementations:");
-printForecastMap(data1);
-printForecastReduce(data1); 
-
-
-////////////////////////////////////
-// TIME-PRESSURED CHALLENGE: Work Hours Analyzer
-
-/*
-JOB INTERVIEW SIMULATION:
-10-minute challenge to analyze freelancer work week
-Stay systematic even under pressure!
-*/
-
-function analyzeWorkWeek(dailyHours) {
-  // Calculate total hours using reduce
-  const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
-
-  // Calculate average with proper rounding
-  const averageHours = Math.round((totalHours / dailyHours.length) * 10) / 10;
-
-  // Find maximum hours and corresponding day
-  const maxHours = Math.max(...dailyHours);
-  const maxDayIndex = dailyHours.indexOf(maxHours);
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-  const maxDay = days[maxDayIndex];
-
-  // Count days worked using filter
-  const daysWorked = dailyHours.filter((hours) => hours > 0).length;
-
-  // Check if full-time week
-  const isFullTime = totalHours >= 35;
-
-  return {
-    totalHours,
-    averageHours,
-    maxDay,
-    daysWorked,
-    isFullTime,
-  };
-}
-
-// Test the solution
-const weeklyHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
-const analysis = analyzeWorkWeek(weeklyHours);
-console.log("Work week analysis:", analysis);
-
-console.log("Challenge completed under time pressure!"); 
+// // Test alternative approaches
+// console.log("Testing alternative implementations:");
+// printForecastMap(data1);
+// printForecastReduce(data1); 
 
 
-// Optimized version with error handling
-function analyzeWorkWeekOptimized(dailyHours) {
-  if (!Array.isArray(dailyHours) || dailyHours.length !== 7) {
-    console.error("Invalid input: Expected array of 7 daily hours");
-    return null;
-  }
+// ////////////////////////////////////
+// // TIME-PRESSURED CHALLENGE: Work Hours Analyzer
 
-  const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
-  const averageHours = Math.round((totalHours / 7) * 10) / 10;
-  const maxHours = Math.max(...dailyHours);
-  const maxDayIndex = dailyHours.indexOf(maxHours);
-  const daysWorked = dailyHours.filter((hours) => hours > 0).length;
+// /*
+// JOB INTERVIEW SIMULATION:
+// 10-minute challenge to analyze freelancer work week
+// Stay systematic even under pressure!
+// */
 
-  const dayNames = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+// function analyzeWorkWeek(dailyHours) {
+//   // Calculate total hours using reduce
+//   const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
 
-  return {
-    totalHours,
-    averageHours,
-    maxDay: dayNames[maxDayIndex],
-    daysWorked,
-    isFullTime: totalHours >= 35,
-    workingDays: dailyHours
-      .map((hours, index) => (hours > 0 ? dayNames[index] : null))
-      .filter((day) => day !== null),
-  };
-}
+//   // Calculate average with proper rounding
+//   const averageHours = Math.round((totalHours / dailyHours.length) * 10) / 10;
 
-const optimizedAnalysis = analyzeWorkWeekOptimized(weeklyHours);
-console.log("Optimized analysis:", optimizedAnalysis); 
+//   // Find maximum hours and corresponding day
+//   const maxHours = Math.max(...dailyHours);
+//   const maxDayIndex = dailyHours.indexOf(maxHours);
+//   const days = [
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//     "Sunday",
+//   ];
+//   const maxDay = days[maxDayIndex];
 
+//   // Count days worked using filter
+//   const daysWorked = dailyHours.filter((hours) => hours > 0).length;
 
+//   // Check if full-time week
+//   const isFullTime = totalHours >= 35;
 
-////////////////////////////////////
-// FINAL INTEGRATION: Debug and Enhance Legacy Code 
+//   return {
+//     totalHours,
+//     averageHours,
+//     maxDay,
+//     daysWorked,
+//     isFullTime,
+//   };
+// }
 
-function legacyForecastFunction(temperatures) { var result = "";
-  for (var i = 1; i <= temperatures.length; i++) {
-    result = result + temperatures[i] + " degrees in day " + i + ", ";
-  }
-  return result;
-}
+// // Test the solution
+// const weeklyHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
+// const analysis = analyzeWorkWeek(weeklyHours);
+// console.log("Work week analysis:", analysis);
 
-// Test the buggy function to see what goes wrong
-const testData = [15, 18, 22, 19];
-console.log("Buggy function output:", legacyForecastFunction(testData));
+// console.log("Challenge completed under time pressure!"); 
 
 
-////////////////////////////////////
-// SYSTEMATIC DEBUGGING AND ENHANCEMENT
+// // Optimized version with error handling
+// function analyzeWorkWeekOptimized(dailyHours) {
+//   if (!Array.isArray(dailyHours) || dailyHours.length !== 7) {
+//     console.error("Invalid input: Expected array of 7 daily hours");
+//     return null;
+//   }
 
-// Completely fixed and enhanced version
-function enhancedForecastFunction(temperatures, options = {}) {
-  // Step 5 - PREVENT: Add comprehensive input validation
-  if (!Array.isArray(temperatures) || temperatures.length === 0) {
-    console.error("Invalid input: temperatures must be a non-empty array");
-    return "";
-  }
+//   const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
+//   const averageHours = Math.round((totalHours / 7) * 10) / 10;
+//   const maxHours = Math.max(...dailyHours);
+//   const maxDayIndex = dailyHours.indexOf(maxHours);
+//   const daysWorked = dailyHours.filter((hours) => hours > 0).length;
 
-  // Step 4 - FIX: Use modern JavaScript with proper declarations
-  const { unit = "°C", separator = "...", includeIndex = true } = options;
+//   const dayNames = [
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//     "Sunday",
+//   ];
 
-  // Step 4 - FIX: Correct loop bounds and string building
-  let result = "";
+//   return {
+//     totalHours,
+//     averageHours,
+//     maxDay: dayNames[maxDayIndex],
+//     daysWorked,
+//     isFullTime: totalHours >= 35,
+//     workingDays: dailyHours
+//       .map((hours, index) => (hours > 0 ? dayNames[index] : null))
+//       .filter((day) => day !== null),
+//   };
+// }
 
-  for (let i = 0; i < temperatures.length; i++) {
-    const dayNumber = includeIndex ? i + 1 : i;
-    result += `${temperatures[i]}${unit} in ${dayNumber} days${separator}`;
-  }
+// const optimizedAnalysis = analyzeWorkWeekOptimized(weeklyHours);
+// console.log("Optimized analysis:", optimizedAnalysis); 
 
-  // Step 5 - PREVENT: Return clean result without trailing separator
-  return separator + result.slice(0, -separator.length);
-}
 
-// Test the enhanced function with multiple configurations
-console.log("Enhanced function (default):", enhancedForecastFunction(testData));
-console.log(
-  "Enhanced function (custom):",
-  enhancedForecastFunction(testData, {
-    unit: "°F",
-    separator: " | ",
-    includeIndex: true,
-  })
-);
 
-console.log("🎯 Complete developer skills successfully applied!");
-console.log("Legacy code debugged, fixed, and enhanced systematically"); 
+// ////////////////////////////////////
+// // FINAL INTEGRATION: Debug and Enhance Legacy Code 
+
+// function legacyForecastFunction(temperatures) { var result = "";
+//   for (var i = 1; i <= temperatures.length; i++) {
+//     result = result + temperatures[i] + " degrees in day " + i + ", ";
+//   }
+//   return result;
+// }
+
+// // Test the buggy function to see what goes wrong
+// const testData = [15, 18, 22, 19];
+// console.log("Buggy function output:", legacyForecastFunction(testData));
+
+
+// ////////////////////////////////////
+// // SYSTEMATIC DEBUGGING AND ENHANCEMENT
+
+// // Completely fixed and enhanced version
+// function enhancedForecastFunction(temperatures, options = {}) {
+//   // Step 5 - PREVENT: Add comprehensive input validation
+//   if (!Array.isArray(temperatures) || temperatures.length === 0) {
+//     console.error("Invalid input: temperatures must be a non-empty array");
+//     return "";
+//   }
+
+//   // Step 4 - FIX: Use modern JavaScript with proper declarations
+//   const { unit = "°C", separator = "...", includeIndex = true } = options;
+
+//   // Step 4 - FIX: Correct loop bounds and string building
+//   let result = "";
+
+//   for (let i = 0; i < temperatures.length; i++) {
+//     const dayNumber = includeIndex ? i + 1 : i;
+//     result += `${temperatures[i]}${unit} in ${dayNumber} days${separator}`;
+//   }
+
+//   // Step 5 - PREVENT: Return clean result without trailing separator
+//   return separator + result.slice(0, -separator.length);
+// }
+
+// // Test the enhanced function with multiple configurations
+// console.log("Enhanced function (default):", enhancedForecastFunction(testData));
+// console.log(
+//   "Enhanced function (custom):",
+//   enhancedForecastFunction(testData, {
+//     unit: "°F",
+//     separator: " | ",
+//     includeIndex: true,
+//   })
+// );
+
+// console.log("🎯 Complete developer skills successfully applied!");
+// console.log("Legacy code debugged, fixed, and enhanced systematically"); 
 
